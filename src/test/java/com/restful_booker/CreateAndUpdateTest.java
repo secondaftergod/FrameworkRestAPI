@@ -1,13 +1,20 @@
 package com.restful_booker;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
+@Feature("Создание и обновления книги")
+@Owner("Element")
 public class CreateAndUpdateTest extends  BookerBase
 {
-  @Test
-   public void createBookingTest()
+    @Test(description = "Create Book")
+    public void createBookingTest()
    {
     Response responseCreate = createNewBooking(Book.setbook());
     responseCreate.prettyPrint();
